@@ -8,11 +8,11 @@ The result can be redirected to a CSV file. I already generated a CSV which has 
 
 To load data into pyspark:
 
-  >>> df = spark.read.format("csv").option("inferSchema", "true").option("header", "true").load("/path/people.csv")
+  df = spark.read.format("csv").option("inferSchema", "true").option("header", "true").load("/path/people.csv")
 
 And here is a sample query with Spark's dataframe API:
 
-  >>> df.groupBy("name").count().orderBy("count",ascending=False).show()
+  df.groupBy("name").count().orderBy("count",ascending=False).show()
 
   +------------+-----+                                                            
   |        name|count|
