@@ -2,7 +2,15 @@
 
 Here I provided a scala program to generate as many people data as you want.
 
-The data columns: name,born,sex,tel,job
+The data schema:
+
+    df.printSchema()
+    root
+     |-- name: string (nullable = true)
+     |-- born: string (nullable = true)
+     |-- sex: string (nullable = true)
+     |-- tel: integer (nullable = true)
+     |-- job: string (nullable = true)
 
 The result can be redirected to a CSV file. I already generated a CSV which has 100k items in the data dir.
 
