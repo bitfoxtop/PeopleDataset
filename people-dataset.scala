@@ -46,8 +46,11 @@ object PeopleDataset {
   }
 
   def main(args:Array[String]):Unit = {
-    var count = 0
-    if (args.size == 0) count = 10 else count = args(0).toInt
+
+    val count = args.size match {
+      case 0 => 10
+      case _ => args(0).toInt
+    }
 
     println("name,born,sex,tel,job")
 
