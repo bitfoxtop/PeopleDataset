@@ -5,7 +5,7 @@ import scala.io.Source
 
 object PeopleDataset {
 
-  def genNameSex:List[String] = {
+  def genNameSex:(String,String) = {
 
     val boys = Source.fromFile("boynames.txt").getLines().toList
     val girls = Source.fromFile("girlnames.txt").getLines().toList
@@ -23,7 +23,7 @@ object PeopleDataset {
     val firstName = names(bet)(idx)
     val sex = sexes(bet)
     
-    List(s"$firstName $lastName",sex)
+    (s"$firstName $lastName",sex)
   }
 
   def genDate:String = {
@@ -66,9 +66,7 @@ object PeopleDataset {
     println("NAME,SEX,BORN,ZIP,EMAIL,JOB,SALARY")
 
     for (x <- 1 to count) {
-      val li = genNameSex
-      val name = li(0)
-      val sex = li(1)
+      val (name,sex) = genNameSex
       val date = genDate
       val zip = genZip
       val email = genEmail
